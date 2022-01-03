@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color-background: #ffffff;
+    --color-container: #5EA8A7;
+    --color-shadow: #257985;
+    --color-button: #fF4447;
+}
+body{
+    background-color: var(--color-background);
+}
+header,
+nav,
+main{
+    background-color: var(--color-container);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 auto 5px auto;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.navPage{
+    padding: 10px;
+    transition: .3s;
+}
+.navPage::before{
+    content: "> ";
+}
+.navPage:hover{
+    background-color: var(--color-shadow);
+    cursor: pointer;
+    color: var(--color-background);
+    transition: .3s;
+}
+article{
+    background-color: var(--color-shadow);
+    border: 1px solid black;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: .3s;
+}
+article:hover {
+    background-color: var(--color-button);
+    cursor: pointer;
+}
+article:hover .imgToolPenetration{
+    transform: scale(1.05);
+}
+.imgToolPenetration{
+    transition: .3s;
+    height: 250px;
+    margin: 15px;
+}
+main{
+    flex-direction: column;
+    align-items: center;
+}
+.taskPage{
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.btnSelect{
+    margin-bottom: 10px;
+    background-color: var(--color-button);
+    color: var(--color-background);
+    border: none;
+    font-size: 18px;
+    padding: 6px 12px;
+    text-transform:uppercase;
+}
+.contentHomePage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 30px  0  30px 0;
+}
+
+@media (max-width: 1200px) {
+    header,
+    nav,
+    main{
+        width: 100%;
+    }
+}
