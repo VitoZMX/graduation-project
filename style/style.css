@@ -1,12 +1,13 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 :root {
-    --color-background: #ffffff;
-    --color-container: #5EA8A7;
-    --color-shadow: #257985;
-    --color-button: #fF4447;
+    --color-background: #eeeeee;
+    --color-container: #d0ddff;
+    --color-shadow: #A1D6E2;
+    --color-button: #A57C65;
+}
+
+@font-face {
+    font-family: 'Roboto1';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 body{
     background-color: var(--color-background);
@@ -20,6 +21,16 @@ main{
     flex-direction: row;
     width: 70%;
     margin: 0 auto 5px auto;
+    align-items: center;
+}
+.text{
+    font-family: 'Roboto1' ;
+}
+.nameUniversity{
+    font-size: 24px;
+}
+.conteinerTextHeader{
+    margin-left: 20px;
 }
 nav ul {
     list-style: none;
@@ -40,9 +51,12 @@ nav ul {
     color: var(--color-background);
     transition: .3s;
 }
+.conteinerRR{
+    background-color: var(--color-shadow);
+}
 article{
     background-color: var(--color-shadow);
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -61,7 +75,7 @@ article:hover .imgToolPenetration{
 .imgToolPenetration{
     transition: .3s;
     height: 250px;
-    margin: 15px;
+    /*margin: 15px;*/
 }
 main{
     flex-direction: column;
@@ -80,6 +94,22 @@ main{
     font-size: 18px;
     padding: 6px 12px;
     text-transform:uppercase;
+}
+.btnSelect:hover{
+    cursor: pointer;
+}
+.lineCreateData{
+    display: flex;
+    margin-bottom: 4px;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.lineCreateData input {
+    width: 70px;
+    margin-left: 5px;
+    outline: none;
 }
 .contentHomePage{
     display: flex;
