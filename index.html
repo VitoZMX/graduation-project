@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Graduation project</title>
+    <link rel="stylesheet" href="style/normalize.css">
+
     <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="icon/fav.ico)" type="image/png">
 </head>
@@ -11,40 +13,47 @@
     <div>
         <img src="img/logoVSTU.png" alt="logoUniversity"/>
     </div>
-    <div>
-        <span class="nameUniversity">Витебский государственный университет</span>
+    <div class="conteinerTextHeader">
+        <span class="nameUniversity text">Витебский государственный технологический университет</span>
+        <p class="text">Жавнеровсский Виктор <br/>студент группы Тмс-19</p>
     </div>
 </header>
 <nav>
     <ul>
-        <li class="navPage navPage1">Home page</li>
-        <li class="navPage navPage2">Page 2</li>
-        <li class="navPage navPage3">Page 3</li>
-        <li class="navPage navPage4">Page 4</li>
-        <li class="navPage navPage5">Page 5</li>
+        <li class="text navPage navPage1">Home page</li>
+        <li class="text navPage navPage2">Page 2</li>
+        <li class="text navPage navPage3">Page 3</li>
+        <li class="text navPage navPage4">Page 4</li>
+        <li class="text navPage navPageResult">Result page</li>
     </ul>
 </nav>
 <main>
-    <span class="taskPage">Выберите тип врезания в металл!</span>
+    <form class="conteinerRR">
+        <span class="text taskPage">Данные режимов резания</span>
+        <div class="lineCreateData">
+            <span class="text">Введите диаметр фрезы:</span>
+            <input type="number"  min="1"  max="1000" step="1" required/>
+        </div>
+        <div class="lineCreateData">
+            <span class="text">Введите частоту вращения фрезы:</span>
+            <input type="number" min="1" max="9999" required/>
+        </div>
+        <div class="lineCreateData">
+            <span class="text">Введите подачу фрезы:</span>
+            <input type="number" min="1" max="9999" step="1" required/>
+        </div>
+        <input type="submit" class="text btnSelect" value="select">
+    </form>
+    <span class="text taskPage">Выберите тип врезания в металл!</span>
     <div class="contentHomePage">
         <article>
             <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <span class="text">Врезение осуществеляется в металл под действием магии!</span>
             <!--            <button class="btnSelect">select</button>-->
         </article>
         <article>
             <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
-            <!--            <button class="btnSelect">select</button>-->
-        </article>
-        <article>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
-            <!--            <button class="btnSelect">select</button>-->
-        </article>
-        <article>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
-            <!--            <button class="btnSelect">select</button>-->
-        </article>
-        <article>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
+            <span class="text">Врезение осуществеляется в металл под действием магии!</span>
             <!--            <button class="btnSelect">select</button>-->
         </article>
     </div>
