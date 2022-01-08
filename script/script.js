@@ -2,7 +2,6 @@
 
 const main = document.querySelector("main");
 const navMenu = document.querySelector('#navMenu');
-const BtnStart = document.querySelector('#startBtn').id;
 const article = document.querySelector('article');
 const inputRR = document.querySelector('#inputRR');
 
@@ -16,28 +15,69 @@ let PodachFrez = null;
 document.addEventListener('click', function (event) {
     let elementClick = event.target.id;
     //console.log(event)
-    if(elementClick===BtnStart){
+    if(elementClick==="startBtn"){
         deletContentInMain()
-        addParagraphInNavMenu("Врезка")
+        addParagraphInNavMenu("Врезка", "vrezka")
+        removeStatusActive()
         createPageVrezka()
-    } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka")  {
+    } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka" )  {
         idVrezki = event.target.parentNode.id
         deletContentInMain()
-        addParagraphInNavMenu("Выход фрезы")
+        removeStatusActive()
+        addParagraphInNavMenu("Выход фрезы", "exitfrez")
         craatePageExitFrezi()
         console.log(idVrezki)
     } else if(event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "exitfrez") {
         idExitFrezi = event.target.parentNode.id;
         deletContentInMain()
-        addParagraphInNavMenu("Режимы резания")
+        removeStatusActive()
+        addParagraphInNavMenu("Режимы резания", "RezhRez")
         createPageRezhimRez()
         console.log(idExitFrezi)
     } else if (elementClick=== "inputRR") {
         saveDataRR()
         deletContentInMain()
-        addParagraphInNavMenu("Результаты")
+        removeStatusActive()
+        addParagraphInNavMenu("Результаты" , "resultPage")
         createPageResult()
         console.log(PodachFrez)
+    } else if(elementClick==="BtnHomePage"){
+        // deletContentInMain()
+        // removeStatusActive()
+        // navMenu.querySelector('#HomePage').classList.toggle('active')
+        // createHomePage()
+        window.location.reload();
+    }
+
+})
+
+navMenu.addEventListener('click', function (event) {
+    let elementClick = event.target.id;
+    if(elementClick === "HomePage"){
+        deletContentInMain()
+        removeStatusActive()
+        event.target.classList.toggle('active')
+        createHomePage()
+    }else if( elementClick === "vrezka"){
+        deletContentInMain()
+        removeStatusActive()
+        event.target.classList.toggle('active')
+        craatePageExitFrezi()
+    } else if(elementClick === "exitfrez") {
+        deletContentInMain()
+        removeStatusActive()
+        event.target.classList.toggle('active')
+        createPageRezhimRez()
+    } else if(elementClick === "RezhRez"){
+        deletContentInMain()
+        removeStatusActive()
+        event.target.classList.toggle('active')
+        createPageRezhimRez()
+    } else if (elementClick === "resultPage") {
+        deletContentInMain()
+        removeStatusActive()
+        event.target.classList.toggle('active')
+        createPageResult()
     }
 
 })
@@ -48,15 +88,29 @@ function deletContentInMain() {
     }
 }
 
-function addParagraphInNavMenu(text) {
+function addParagraphInNavMenu(text, newId) {
     let addNewBlock = document.createElement('li');
-    addNewBlock.className = `text navPage`;
-    addNewBlock.id = ``;
+    addNewBlock.className = `text navPage active`;
+    addNewBlock.id = `${newId}`;
     addNewBlock.innerHTML = `
     ${text}
     `;
     navMenu.append(addNewBlock);
 }
+
+function createHomePage() {
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `HomePage`;
+    addNewBlock.innerHTML = `
+        <span class="text taskPage">О сервисе</span>
+        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        <button id="startBtn" class="btnSelect text">начать</button>
+            `;
+    main.append(addNewBlock);
+}
+createHomePage()
 
 function createPageRezhimRez() {
         let addNewBlock = document.createElement('div');
@@ -209,6 +263,7 @@ function createPageResult() {
             <span class="text">Подача в момент врезания: <span class="importantText">${PodachFrez}</span> мм/мин</span>
             <span class="text">Подача рабочего хода: <span class="importantText">${PodachFrez}</span> мм/мин</span>
         </div>
+        <button id="BtnHomePage" class="btnSelect text">начать сначала</button>
             `;
 
     main.append(addNewBlock);
@@ -218,4 +273,9 @@ function saveDataRR() {
     diametrFrez = document.querySelector('#diametrFrez').value;
     OborotFrez = document.querySelector('#OborotFrez').value;
     PodachFrez = document.querySelector('#PodachFrez').value;
+}
+
+function removeStatusActive() {
+    let el = navMenu.querySelector('.active');
+    el.classList.remove("active")
 }
