@@ -62,12 +62,12 @@ navMenu.addEventListener('click', function (event) {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
-        craatePageExitFrezi()
+        createPageVrezka()
     } else if(elementClick === "exitfrez") {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
-        createPageRezhimRez()
+        craatePageExitFrezi()
     } else if(elementClick === "RezhRez"){
         deletContentInMain()
         removeStatusActive()
