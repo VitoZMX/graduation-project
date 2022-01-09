@@ -14,61 +14,55 @@ let PodachFrez = null;
 
 document.addEventListener('click', function (event) {
     let elementClick = event.target.id;
-    //console.log(event)
-    if(elementClick==="startBtn"){
+
+    if (elementClick === "startBtn") {
         deletContentInMain()
         addParagraphInNavMenu("Врезка", "vrezka")
         removeStatusActive()
         createPageVrezka()
-    } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka" )  {
+    } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka") {
         idVrezki = event.target.parentNode.id
         deletContentInMain()
         removeStatusActive()
         addParagraphInNavMenu("Выход фрезы", "exitfrez")
         craatePageExitFrezi()
         console.log(idVrezki)
-    } else if(event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "exitfrez") {
+    } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "exitfrez") {
         idExitFrezi = event.target.parentNode.id;
         deletContentInMain()
         removeStatusActive()
         addParagraphInNavMenu("Режимы резания", "RezhRez")
         createPageRezhimRez()
         console.log(idExitFrezi)
-    } else if (elementClick=== "inputRR") {
+    } else if (elementClick === "inputRR") {
         saveDataRR()
         deletContentInMain()
         removeStatusActive()
-        addParagraphInNavMenu("Результаты" , "resultPage")
+        addParagraphInNavMenu("Результаты", "resultPage")
         createPageResult()
-        console.log(PodachFrez)
-    } else if(elementClick==="BtnHomePage"){
-        // deletContentInMain()
-        // removeStatusActive()
-        // navMenu.querySelector('#HomePage').classList.toggle('active')
-        // createHomePage()
+    } else if (elementClick === "BtnHomePage") {
         window.location.reload();
     }
-
 })
 
 navMenu.addEventListener('click', function (event) {
     let elementClick = event.target.id;
-    if(elementClick === "HomePage"){
+    if (elementClick === "HomePage") {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
         createHomePage()
-    }else if( elementClick === "vrezka"){
+    } else if (elementClick === "vrezka") {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
         createPageVrezka()
-    } else if(elementClick === "exitfrez") {
+    } else if (elementClick === "exitfrez") {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
         craatePageExitFrezi()
-    } else if(elementClick === "RezhRez"){
+    } else if (elementClick === "RezhRez") {
         deletContentInMain()
         removeStatusActive()
         event.target.classList.toggle('active')
@@ -89,6 +83,34 @@ function deletContentInMain() {
 }
 
 function addParagraphInNavMenu(text, newId) {
+    let listNav = navMenu.childNodes;
+
+    for (let i = 0; i < listNav.length; i++) {
+        if (listNav[i].id === newId) {
+            if (listNav[i].id === "HomePage") {
+                deletContentInMain()
+                listNav[i].classList.toggle('active')
+                return
+            } else if (listNav[i].id === "vrezka") {
+                deletContentInMain()
+                listNav[i].classList.toggle('active')
+                return
+            } else if (listNav[i].id === "exitfrez") {
+                deletContentInMain()
+                listNav[i].classList.toggle('active')
+                return
+            } else if (listNav[i].id === "RezhRez") {
+                deletContentInMain()
+                listNav[i].classList.toggle('active')
+                return
+            } else if (listNav[i].id === "resultPage") {
+                deletContentInMain()
+                listNav[i].classList.toggle('active')
+                return
+            }
+        }
+    }
+
     let addNewBlock = document.createElement('li');
     addNewBlock.className = `text navPage active`;
     addNewBlock.id = `${newId}`;
@@ -110,13 +132,14 @@ function createHomePage() {
             `;
     main.append(addNewBlock);
 }
+
 createHomePage()
 
 function createPageRezhimRez() {
-        let addNewBlock = document.createElement('div');
-        addNewBlock.className = `conteinerRR`;
-        addNewBlock.id = ``;
-        addNewBlock.innerHTML = `
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `conteinerRR`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
         <span class="text taskPage">Данные режимов резания</span>
         <div class="lineCreateData">
             <span class="text">Введите диаметр фрезы:</span>
@@ -132,7 +155,7 @@ function createPageRezhimRez() {
         </div>
         <button id="inputRR" class="text btnSelect">select</button>
             `;
-        main.append(addNewBlock);
+    main.append(addNewBlock);
 }
 
 function createPageVrezka() {
