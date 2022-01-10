@@ -5,10 +5,22 @@ const navMenu = document.querySelector('#navMenu');
 const article = document.querySelector('article');
 const inputRR = document.querySelector('#inputRR');
 
-let idVrezki = null;
-let idExitFrezi = null;
+let ObshParam = {
+    typeVrezkiFrez : null,
+    typeVuxodFrez : null,
+    diametrFrez : null,
+    kolProhodov: null,
+    DlinaPoverhnosti : null
+}
+let RabXoDFrez = {
+    S: null,
+    F: null
+}
+let VrezFrez = {
+    S: null,
+    F: null
+}
 
-let diametrFrez = null;
 let OborotFrez = null;
 let PodachFrez = null;
 
@@ -21,19 +33,19 @@ document.addEventListener('click', function (event) {
         removeStatusActive()
         createPageVrezka()
     } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka") {
-        idVrezki = event.target.parentNode.id
+        ObshParam.typeVrezkiFrez = event.target.parentNode.id
         deletContentInMain()
         removeStatusActive()
         addParagraphInNavMenu("Выход фрезы", "exitfrez")
         craatePageExitFrezi()
-        console.log(idVrezki)
+        console.log(ObshParam.typeVrezkiFrez)
     } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "exitfrez") {
-        idExitFrezi = event.target.parentNode.id;
+        ObshParam.typeVuxodFrez = event.target.parentNode.id;
         deletContentInMain()
         removeStatusActive()
         addParagraphInNavMenu("Режимы резания", "RezhRez")
         createPageRezhimRez()
-        console.log(idExitFrezi)
+        console.log(ObshParam.typeVuxodFrez)
     } else if (elementClick === "inputRR") {
         saveDataRR()
         deletContentInMain()
@@ -125,9 +137,9 @@ function createHomePage() {
     addNewBlock.className = `HomePage`;
     addNewBlock.innerHTML = `
         <span class="text taskPage">О сервисе</span>
-        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
-        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
-        <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        <div class="text space">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="text space">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div class="text space">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
         <button id="startBtn" class="btnSelect text">начать</button>
             `;
     main.append(addNewBlock);
@@ -137,21 +149,56 @@ createHomePage()
 
 function createPageRezhimRez() {
     let addNewBlock = document.createElement('div');
-    addNewBlock.className = `conteinerRR`;
+    addNewBlock.className = `homeRR`;
     addNewBlock.id = ``;
     addNewBlock.innerHTML = `
         <span class="text taskPage">Данные режимов резания</span>
-        <div class="lineCreateData">
-            <span class="text">Введите диаметр фрезы:</span>
-            <input class="text" id="diametrFrez" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])"  step="1"/>
-        </div>
-        <div class="lineCreateData">
-            <span class="text">Введите частоту вращения фрезы:</span>
-            <input class="text" id="OborotFrez" type="number" min="1" max="9999" required/>
-        </div>
-        <div class="lineCreateData">
-            <span class="text">Введите подачу фрезы:</span>
-            <input class="text" id="PodachFrez" type="number" min="1" max="9999" step="1" required/>
+        <div class="conteinerRR" id="">
+            <div class="conteinerInputsRR">
+                <div class="lineCreateData">
+                    <span class="text">Введите диаметр фрезы:</span>
+                    <input class="text" id="diametrFrez" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
+                    <span class="text">мм</span>
+                </div>
+                <div class="lineCreateData">
+                    <span class="text">Количество проходов:</span>
+                    <input class="text" id="kolProh" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
+                    <span class="text">шт</span>
+                </div>
+                <div class="lineCreateData">
+                    <span class="text">Длинна поверхности:</span>
+                    <input class="text" id="DlinaPoverhnosti" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
+                    <span class="text">мм</span>
+                </div>
+            </div>
+            <div class="gorizontContienerRR">
+                <div class="vertical-line conteinerInputsRR">
+                    <span class="text taskPage">При рабочем ходе:</span>
+                    <div class="lineCreateData">
+                        <span class="text">Введите частоту вращения фрезы:</span>
+                        <input class="text" id="RabXoDFrezS" type="number" min="1" max="9999" required="">
+                        <span class="text">об/мин</span>
+                    </div>
+                    <div class="lineCreateData">
+                        <span class="text">Введите подачу фрезы:</span>
+                        <input class="text" id="RabXoDFrezF" type="number" min="1" max="9999" step="1" required="">
+                        <span class="text">мм/мин</span>
+                    </div>
+                </div>
+                <div class="conteinerInputsRR">
+                    <span class="text taskPage">При врезение и выходе:</span>
+                    <div class="lineCreateData">
+                        <span class="text">Введите частоту вращения фрезы:</span>
+                        <input class="text" id="VrezFrezS" type="number" min="1" max="9999" required="">
+                        <span class="text">об/мин</span>
+                    </div>
+                    <div class="lineCreateData">
+                        <span class="text">Введите подачу фрезы:</span>
+                        <input class="text" id="VrezFrezF" type="number" min="1" max="9999" step="1" required="">
+                        <span class="text">мм/мин</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <button id="inputRR" class="text btnSelect">select</button>
             `;
@@ -279,12 +326,14 @@ function createPageResult() {
     addNewBlock.innerHTML = `
         <span class="text taskPage">Результаты вычеслений:</span>
         <div class="PageResultData">
-            <span class="text">To<span>100500</span> мин</span>
-            <span class="text">Колличество проходов: <span class="importantText">100500</span> шт</span>
-            <span class="text">Скорость вращения во время врезания: <span class="importantText">${OborotFrez}</span> об/мин</span>
-            <span class="text">Скорость вращения рабочего хода: <span class="importantText">${OborotFrez}</span> об/мин</span>
-            <span class="text">Подача в момент врезания: <span class="importantText">${PodachFrez}</span> мм/мин</span>
-            <span class="text">Подача рабочего хода: <span class="importantText">${PodachFrez}</span> мм/мин</span>
+            <div class="text lineCreateData">To<div class="importantText">100500</div>мин</div>
+            <div class="text lineCreateData">Диаметр фрезы:<div class="importantText">${ObshParam.diametrFrez}</div>мм</div>
+            <div class="text lineCreateData">Количество проходов:<div class="importantText">${ObshParam.kolProhodov}</div>шт</div>
+            <div class="text lineCreateData">Длина обрабатываемой поверхности:<div class="importantText">${ObshParam.DlinaPoverhnosti}</div>шт</div>
+            <div class="text lineCreateData">Скорость вращения во время врезания:<div class="importantText">${VrezFrez.S}</div>об/мин</div>
+            <div class="text lineCreateData">Скорость вращения рабочего хода:<div class="importantText">${RabXoDFrez.S}</div>об/мин</div>
+            <div class="text lineCreateData">Подача в момент врезания:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
+            <div class="text lineCreateData">Подача рабочего хода:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
         </div>
         <button id="BtnHomePage" class="btnSelect text">начать сначала</button>
             `;
@@ -293,9 +342,22 @@ function createPageResult() {
 }
 
 function saveDataRR() {
-    diametrFrez = document.querySelector('#diametrFrez').value;
-    OborotFrez = document.querySelector('#OborotFrez').value;
-    PodachFrez = document.querySelector('#PodachFrez').value;
+    // общие параметры
+    ObshParam.diametrFrez = document.querySelector('#diametrFrez').value;
+    ObshParam.kolProhodov = document.querySelector('#kolProh').value;
+    ObshParam.DlinaPoverhnosti = document.querySelector('#DlinaPoverhnosti').value;
+
+    // рабочий ход фрезы
+    RabXoDFrez.S = document.querySelector('#RabXoDFrezS').value;
+    RabXoDFrez.F = document.querySelector('#RabXoDFrezF').value;
+
+    // врезка и выход фрезы
+    VrezFrez.S = document.querySelector('#VrezFrezS').value;
+    VrezFrez.F = document.querySelector('#VrezFrezF').value;
+
+    console.log(ObshParam)
+    console.log(RabXoDFrez)
+    console.log(VrezFrez)
 }
 
 function removeStatusActive() {
