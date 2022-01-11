@@ -200,7 +200,7 @@ function createPageRezhimRez() {
                 </div>
             </div>
         </div>
-        <button id="inputRR" class="text btnSelect">select</button>
+        <button id="inputRR" class="text btnSelect">ввод</button>
             `;
     main.append(addNewBlock);
 }
