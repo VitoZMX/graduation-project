@@ -326,14 +326,24 @@ function createPageResult() {
     addNewBlock.innerHTML = `
         <span class="text taskPage">Результаты вычеслений:</span>
         <div class="PageResultData">
+        <div class="conteinerInputsRR">
             <div class="text lineCreateData">To<div class="importantText">100500</div>мин</div>
             <div class="text lineCreateData">Диаметр фрезы:<div class="importantText">${ObshParam.diametrFrez}</div>мм</div>
             <div class="text lineCreateData">Количество проходов:<div class="importantText">${ObshParam.kolProhodov}</div>шт</div>
             <div class="text lineCreateData">Длина обрабатываемой поверхности:<div class="importantText">${ObshParam.DlinaPoverhnosti}</div>шт</div>
-            <div class="text lineCreateData">Скорость вращения во время врезания:<div class="importantText">${VrezFrez.S}</div>об/мин</div>
-            <div class="text lineCreateData">Скорость вращения рабочего хода:<div class="importantText">${RabXoDFrez.S}</div>об/мин</div>
-            <div class="text lineCreateData">Подача в момент врезания:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
-            <div class="text lineCreateData">Подача рабочего хода:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
+        </div>
+            <div class="gorizontContienerRR">
+            <div class="vertical-line conteinerInputsRR">
+                <span class="text taskPage">При врезеании</span>
+                <div class="text lineCreateData">Скорость вращения во время врезания:<div class="importantText">${VrezFrez.S}</div>об/мин</div>
+                <div class="text lineCreateData">Подача в момент врезания:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
+            </div>
+            <div class="conteinerInputsRR">
+                <span class="text taskPage">На рабочем ходу</span>
+                <div class="text lineCreateData">Скорость вращения рабочего хода:<div class="importantText">${RabXoDFrez.S}</div>об/мин</div>
+                <div class="text lineCreateData">Подача рабочего хода:<div class="importantText">${VrezFrez.F}</div>мм/мин</div>
+            </div>
+            </div>      
         </div>
         <button id="BtnHomePage" class="btnSelect text">начать сначала</button>
             `;
