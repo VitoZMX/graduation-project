@@ -218,13 +218,13 @@ function createPageVrezka() {
             <div class="textInArticle text">
                 Врезение осуществеляется в металл под действием магии!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="2" class="vrezka">
             <div class="textInArticle text">
                 Врезение осуществеляется в металл под действием магии!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
         <article id="3" class="vrezka">
             <div class="textInArticle text">
@@ -232,19 +232,19 @@ function createPageVrezka() {
                 букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
                 действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog1.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
         <article id="4" class="vrezka">
             <div class="textInArticle text">
                 Врезение осуществеляется в металл под действием магии!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="5" class="vrezka">
             <div class="textInArticle text">
                 Врезение осуществеляется в металл под действием магии!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
@@ -252,7 +252,7 @@ function createPageVrezka() {
                 букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
                 действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog1.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
@@ -260,13 +260,13 @@ function createPageVrezka() {
                 букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
                 действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog1.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
         <article id="7" class="vrezka">
             <div class="textInArticle text">
                 Врезение осуществеляется в металл под действием магии!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgDog.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
             `;
 
@@ -287,31 +287,31 @@ function craatePageExitFrezi() {
             <div class="textInArticle text ">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="12" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="13" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="14" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
         <article id="15" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/TestImgCat.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
         </article>
             `;
 
