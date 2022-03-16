@@ -209,8 +209,22 @@ function createPageRezhimRez() {
 
 function createPageVrezka() {
     const NamePage = document.createElement('span');
-    NamePage.className = `text taskPage`;
-    NamePage.innerHTML = `Выберите тип врезания в металл!`;
+    NamePage.className = `text taskPage taskPageVrezkaVixod`;
+    NamePage.innerHTML = `Выберите вид врезания фрезы в заготовку`;
+
+    const infoBlock = document.createElement('div');
+    infoBlock.className = ``;
+    infoBlock.innerHTML = `
+            <div class="gorizontContienerCenter">
+                <div class="exampleColor1"></div>
+                <div class="text "> - цветом обозначена заготовка</div>
+            </div>
+            <div class="gorizontContienerCenter">
+                <div class="exampleColor2"></div>
+                <div class="text "> - цветом обозначена фреза</div>
+            </div>
+            <div class="text">S - направление подачи заготовки</div>
+    `;
 
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
@@ -218,15 +232,15 @@ function createPageVrezka() {
     addNewBlock.innerHTML = `
         <article id="1" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии!
+                Диаметр фрезы больше ширины обрабатываемой поверхности.
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem1.png" alt="imgToolPenetration"/>
         </article>
         <article id="2" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии!
+                Фреза обрабатывает уступ.
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/schemes/schem2.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="3" class="vrezka">
             <div class="textInArticle text">
@@ -273,13 +287,14 @@ function createPageVrezka() {
             `;
 
     main.append(NamePage);
+    main.append(infoBlock);
     main.append(addNewBlock);
 }
 
 function craatePageExitFrezi() {
     const NamePage = document.createElement('span');
-    NamePage.className = `text taskPage`;
-    NamePage.innerHTML = `Выберите тип выхода инструмента из металла!`;
+    NamePage.className = `text taskPage taskPageVrezkaVixod`;
+    NamePage.innerHTML = `Выберите вид выхода фрезы из заготовки`;
 
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
