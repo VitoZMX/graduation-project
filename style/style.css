@@ -44,8 +44,9 @@ main{
 .exampleColor2{
     background: var(--color-button);
 }
-.nameUniversity{
+.nameProject{
     font-size: 24px;
+    margin-top: 15px;
 }
 .conteinerTextHeader{
     margin-left: 20px;
