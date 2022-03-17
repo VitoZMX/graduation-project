@@ -62,7 +62,7 @@ nav ul {
     transition: .3s;
 }
 .navPage::before{
-    content: "> ";
+    /*content: "> ";*/
 }
 .navPage:hover{
     background-color: var(--color-shadow);

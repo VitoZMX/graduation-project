@@ -232,51 +232,45 @@ function createPageVrezka() {
     addNewBlock.innerHTML = `
         <article id="1" class="vrezka">
             <div class="textInArticle text">
-                Диаметр фрезы больше ширины обрабатываемой поверхности.
+                Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem1.png" alt="imgToolPenetration"/>
         </article>
         <article id="2" class="vrezka">
             <div class="textInArticle text">
-                Фреза обрабатывает уступ.
+                Фреза обрабатывает уступ
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem2.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="3" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии! Проверка на то что будет если тут будет много
-                букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
-                действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
+                Обработка паза (шлица)
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/schemes/schem3.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="4" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии!
+                Обработка паза с врезанием в поверхность под углом
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem4.png" alt="imgToolPenetration"/>
         </article>
         <article id="5" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии!
+                Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/schemes/schem5.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии! Проверка на то что будет если тут будет много
-                букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
-                действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
+                Обработка паза, врезание по центру скругления заготовки
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/schemes/schem6.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии! Проверка на то что будет если тут будет много
-                букафакаг! Или очень много букаф. В как они перекроют блок! Врезение осуществеляется в металл под
-                действием магии! Проверка на то что будет если тут будет много букафакаг! Или очень много букаф.
+                Обработка паза, врезание со смещением относительно скругления заготовки
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
+            <img class="imgToolPenetration" src="img/schemes/schem7.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="7" class="vrezka">
             <div class="textInArticle text">
