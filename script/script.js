@@ -212,19 +212,7 @@ function createPageVrezka() {
     NamePage.className = `text taskPage taskPageVrezkaVixod`;
     NamePage.innerHTML = `Выберите вид врезания фрезы в заготовку`;
 
-    const infoBlock = document.createElement('div');
-    infoBlock.className = ``;
-    infoBlock.innerHTML = `
-            <div class="gorizontContienerCenter">
-                <div class="exampleColor1"></div>
-                <div class="text "> - цветом обозначена заготовка</div>
-            </div>
-            <div class="gorizontContienerCenter">
-                <div class="exampleColor2"></div>
-                <div class="text "> - цветом обозначена фреза</div>
-            </div>
-            <div class="text">S - направление подачи заготовки</div>
-    `;
+
 
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
@@ -232,56 +220,50 @@ function createPageVrezka() {
     addNewBlock.innerHTML = `
         <article id="1" class="vrezka">
             <div class="textInArticle text">
-                Диаметр фрезы больше ширины обрабатываемой поверхности
+                Врезание по прямой. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem1.png" alt="imgToolPenetration"/>
         </article>
         <article id="2" class="vrezka">
             <div class="textInArticle text">
-                Фреза обрабатывает уступ
+                Врезание по прямой. Фреза обрабатывает уступ
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem2.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="3" class="vrezka">
             <div class="textInArticle text">
-                Обработка паза (шлица)
+                Врезание по прямой. Обработка паза (шлица)
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem3.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="4" class="vrezka">
             <div class="textInArticle text">
-                Обработка паза с врезанием в поверхность под углом
+                Врезание по прямой. Обработка паза с врезанием в поверхность под углом
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem4.png" alt="imgToolPenetration"/>
         </article>
         <article id="5" class="vrezka">
             <div class="textInArticle text">
-                Диаметр фрезы больше ширины обрабатываемой поверхности
+                Врезание по окружности. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem5.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
-                Обработка паза, врезание по центру скругления заготовки
+                Врезание по окружности. Обработка паза, врезание по центру скругления заготовки
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem6.png" alt="imgTypeVrezanija"/>
         </article>
         <article id="6" class="vrezka">
             <div class="textInArticle text">
-                Обработка паза, врезание со смещением относительно скругления заготовки
+                Врезание по окружности. Обработка паза, врезание со смещением относительно скругления заготовки
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem7.png" alt="imgTypeVrezanija"/>
-        </article>
-        <article id="7" class="vrezka">
-            <div class="textInArticle text">
-                Врезение осуществеляется в металл под действием магии!
-            </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgTypeVrezanija"/>
         </article>
             `;
 
     main.append(NamePage);
-    main.append(infoBlock);
+    main.append(PodskazkaViboraSchem());
     main.append(addNewBlock);
 }
 
@@ -298,35 +280,54 @@ function craatePageExitFrezi() {
             <div class="textInArticle text ">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="12" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem2exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="13" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="14" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="15" class="exitfrez">
             <div class="textInArticle text">
                 Выход инструмента из металла происходит по волшебству!
             </div>
-            <img class="imgToolPenetration" src="img/noImg.jpg" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="16" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="17" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="18" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
 
     main.append(NamePage);
+    main.append(PodskazkaViboraSchem());
     main.append(addNewBlock);
 }
 
@@ -360,6 +361,24 @@ function createPageResult() {
             `;
 
     main.append(addNewBlock);
+}
+
+function PodskazkaViboraSchem() {
+    const infoBlock = document.createElement('div');
+    infoBlock.className = ``;
+    infoBlock.innerHTML = `
+            <div class="gorizontContienerCenter">
+                <div class="exampleColor1"></div>
+                <div class="text "> - цветом обозначена заготовка</div>
+            </div>
+            <div class="gorizontContienerCenter">
+                <div class="exampleColor2"></div>
+                <div class="text "> - цветом обозначена фреза</div>
+            </div>
+            <div class="text">S - направление подачи заготовки</div>
+            <div class="text">Всплывающая подсказка отображается при наведение на схему</div>
+    `;
+    return infoBlock
 }
 
 function saveDataRR() {

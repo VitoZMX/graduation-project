@@ -39,10 +39,10 @@ main{
     margin-right: 5px;
 }
 .exampleColor1{
-    background: var(--color-shadow);
+    background: #76D5E9FF;
 }
 .exampleColor2{
-    background: var(--color-button);
+    background: #FF6700FF;
 }
 .nameProject{
     font-size: 24px;
