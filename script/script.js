@@ -154,21 +154,32 @@ function createPageRezhimRez() {
     addNewBlock.className = `homeRR`;
     addNewBlock.id = ``;
     addNewBlock.innerHTML = `
-        <span class="text taskPage">Данные режимов резания</span>
+        <span class="text taskPage">Данные резания согласно выбраных схем</span>
+        <div class="gorizontContienerRR" id="imgSchemeRR"></div>
         <div class="conteinerRR" id="">
             <div class="conteinerInputsRR">
                 <div class="lineCreateData">
-                    <span class="text">Введите диаметр фрезы:</span>
+                    <span class="text">Диаметр фрезы <b><em>Dфр</em></b> :</span>
                     <input class="text" id="diametrFrez" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
                     <span class="text">мм</span>
                 </div>
                 <div class="lineCreateData">
-                    <span class="text">Количество проходов:</span>
+                    <span class="text">Ширина заготовки на входе <b><em>Bвх</em></b> :</span>
+                    <input class="text" id="shirinaZagot" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
+                    <span class="text">мм</span>
+                </div>
+                <div class="lineCreateData">
+                    <span class="text">Количество проходов :</span>
                     <input class="text" id="kolProh" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
                     <span class="text">шт</span>
                 </div>
                 <div class="lineCreateData">
-                    <span class="text">Длинна поверхности:</span>
+                    <span class="text">Глубина резания <b><em>t</em></b> :</span>
+                    <input class="text" id="glubRez" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
+                    <span class="text">шт</span>
+                </div>
+                <div class="lineCreateData">
+                    <span class="text">Длина обрабатываемого участка <b><em>L</em></b> :</span>
                     <input class="text" id="DlinaPoverhnosti" type="number" data-min="1" data-max="10000" pattern="([^0].?|0[^0])" step="1">
                     <span class="text">мм</span>
                 </div>
@@ -177,12 +188,12 @@ function createPageRezhimRez() {
                 <div class="vertical-line conteinerInputsRR">
                     <span class="text taskPage">При рабочем ходе:</span>
                     <div class="lineCreateData">
-                        <span class="text">Введите частоту вращения фрезы:</span>
+                        <span class="text">Введите частоту вращения фрезы <b><em>n</em></b> :</span>
                         <input class="text" id="RabXoDFrezS" type="number" min="1" max="9999" required="">
                         <span class="text">об/мин</span>
                     </div>
                     <div class="lineCreateData">
-                        <span class="text">Введите подачу фрезы:</span>
+                        <span class="text">Введите подачу фрезы <b><em>Sм</em></b> :</span>
                         <input class="text" id="RabXoDFrezF" type="number" min="1" max="9999" step="1" required="">
                         <span class="text">мм/мин</span>
                     </div>
@@ -190,12 +201,12 @@ function createPageRezhimRez() {
                 <div class="conteinerInputsRR">
                     <span class="text taskPage">При врезение и выходе:</span>
                     <div class="lineCreateData">
-                        <span class="text">Введите частоту вращения фрезы:</span>
+                        <span class="text">Введите частоту вращения фрезы <b><em>n</em></b> :</span>
                         <input class="text" id="VrezFrezS" type="number" min="1" max="9999" required="">
                         <span class="text">об/мин</span>
                     </div>
                     <div class="lineCreateData">
-                        <span class="text">Введите подачу фрезы:</span>
+                        <span class="text">Введите подачу фрезы <b><em>Sм</em></b> :</span>
                         <input class="text" id="VrezFrezF" type="number" min="1" max="9999" step="1" required="">
                         <span class="text">мм/мин</span>
                     </div>
@@ -205,14 +216,45 @@ function createPageRezhimRez() {
         <button id="inputRR" class="text btnSelect">ввод</button>
             `;
     main.append(addNewBlock);
+    document.querySelector("#imgSchemeRR").append(addSchemes1InPageCreateRezhRez());
+    document.querySelector("#imgSchemeRR").append(addSchemes2InPageCreateRezhRez());
+}
+
+function addSchemes1InPageCreateRezhRez() {
+    let addNewBlock = document.createElement('img');
+    addNewBlock.className = `imgSchemeInRR`;
+
+    if (ObshParam.typeVrezkiFrez === "p1") {
+        addNewBlock.src = "img/schemes/symbol/p1.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVrezkiFrez === "p2") {
+        addNewBlock.src = "img/schemes/symbol/p2.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVrezkiFrez === "o5") {
+        addNewBlock.src = "img/schemes/symbol/o5.png"
+        addNewBlock.alt = "imgScheme"
+    }
+    return addNewBlock
+}
+
+function addSchemes2InPageCreateRezhRez() {
+    let addNewBlock = document.createElement('img');
+    addNewBlock.className = `imgSchemeInRR`;
+
+    if (ObshParam.typeVrezkiFrez + "e" === ObshParam.typeVuxodFrez) {
+        addNewBlock.src = ""
+    } else if (ObshParam.typeVuxodFrez === "o5e") {
+        addNewBlock.src = "img/schemes/symbol/o5.png"
+        addNewBlock.alt = "imgScheme"
+    }
+
+    return addNewBlock
 }
 
 function createPageVrezka() {
     const NamePage = document.createElement('span');
     NamePage.className = `text taskPage taskPageVrezkaVixod`;
     NamePage.innerHTML = `Выберите вид врезания фрезы в заготовку`;
-
-
 
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
@@ -272,6 +314,77 @@ function craatePageExitFrezi() {
     NamePage.className = `text taskPage taskPageVrezkaVixod`;
     NamePage.innerHTML = `Выберите вид выхода фрезы из заготовки`;
 
+    main.append(NamePage);
+    main.append(PodskazkaViboraSchem());
+
+    if(ObshParam.typeVrezkiFrez==="p1") {
+        main.append(funcp1());
+    }else if (ObshParam.typeVrezkiFrez==="p2") {
+        main.append(funcp2());
+    } else if (ObshParam.typeVrezkiFrez==="p3") {
+
+    }else if (ObshParam.typeVrezkiFrez==="p4") {
+
+    }else if (ObshParam.typeVrezkiFrez==="o5") {
+        main.append(funco5());
+    }else if (ObshParam.typeVrezkiFrez==="o6") {
+
+    }else if (ObshParam.typeVrezkiFrez==="o7") {
+
+    }
+}
+
+function funcp1() {
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+        <article id="p1e" class="exitfrez">
+            <div class="textInArticle text ">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o5e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
+
+function funcp2() {
+
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+        <article id="p2e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem2exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
+
+function funcp3() {
+
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
     addNewBlock.id = ``;
@@ -325,12 +438,35 @@ function craatePageExitFrezi() {
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-
-    main.append(NamePage);
-    main.append(PodskazkaViboraSchem());
-    main.append(addNewBlock);
+    return addNewBlock
 }
+function funco5() {
 
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+         <article id="p1e" class="exitfrez">
+            <div class="textInArticle text ">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o5e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход инструмента из металла происходит по волшебству!
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
 function createPageResult() {
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `PageResult`;
