@@ -29,7 +29,7 @@ document.addEventListener('click', function (event) {
 
     if (elementClick === "startBtn") {
         deletContentInMain()
-        addParagraphInNavMenu("Врезка", "vrezka")
+        addParagraphInNavMenu("Врезание", "vrezka")
         removeStatusActive()
         createPageVrezka()
     } else if (event.target.parentNode.tagName.toLowerCase() === "article" && event.target.parentNode.className.toLowerCase() === "vrezka") {
@@ -230,8 +230,23 @@ function addSchemes1InPageCreateRezhRez() {
     } else if (ObshParam.typeVrezkiFrez === "p2") {
         addNewBlock.src = "img/schemes/symbol/p2.png"
         addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVrezkiFrez === "p3") {
+        addNewBlock.src = "img/schemes/symbol/p3.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVrezkiFrez === "p4") {
+        addNewBlock.src = "img/schemes/symbol/p4.png"
+        addNewBlock.alt = "imgScheme"
     } else if (ObshParam.typeVrezkiFrez === "o5") {
         addNewBlock.src = "img/schemes/symbol/o5.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVrezkiFrez === "o6") {
+        addNewBlock.src = "img/schemes/symbol/o6.png"
+        addNewBlock.alt = "imgScheme"
+    }  else if (ObshParam.typeVrezkiFrez === "o7") {
+        addNewBlock.src = "img/schemes/symbol/o7.png"
+        addNewBlock.alt = "imgScheme"
+    }else {
+        addNewBlock.src = "img/noImg.jpg"
         addNewBlock.alt = "imgScheme"
     }
     return addNewBlock
@@ -242,12 +257,36 @@ function addSchemes2InPageCreateRezhRez() {
     addNewBlock.className = `imgSchemeInRR`;
 
     if (ObshParam.typeVrezkiFrez + "e" === ObshParam.typeVuxodFrez) {
-        addNewBlock.src = ""
+        addNewBlock.src = "img/schemes/symbol/schem-identich.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "p1e") {
+        addNewBlock.src = "img/schemes/symbol/p1.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "p2e") {
+        addNewBlock.src = "img/schemes/symbol/p2.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "p3e") {
+        addNewBlock.src = "img/schemes/symbol/p3.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "p4e") {
+        addNewBlock.src = "img/schemes/symbol/p4.png"
+        addNewBlock.alt = "imgScheme"
     } else if (ObshParam.typeVuxodFrez === "o5e") {
         addNewBlock.src = "img/schemes/symbol/o5.png"
         addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "o6e") {
+        addNewBlock.src = "img/schemes/symbol/o6.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "o7e") {
+        addNewBlock.src = "img/schemes/symbol/o7.png"
+        addNewBlock.alt = "imgScheme"
+    } else if (ObshParam.typeVuxodFrez === "8e") {
+        addNewBlock.src = "img/schemes/symbol/noexit.png"
+        addNewBlock.alt = "imgScheme"
+    } else {
+        addNewBlock.src = "img/noImg.jpg"
+        addNewBlock.alt = "imgScheme"
     }
-
     return addNewBlock
 }
 
@@ -307,6 +346,15 @@ function createPageVrezka() {
     main.append(NamePage);
     main.append(PodskazkaViboraSchem());
     main.append(addNewBlock);
+    addStatusActive()
+
+    function addStatusActive() {
+        let SearchId = ObshParam.typeVrezkiFrez
+        if (SearchId != null) {
+            let imgActiv = document.getElementById(SearchId)
+            imgActiv.classList.toggle('activeImg')
+        }
+    }
 }
 
 function craatePageExitFrezi() {
@@ -316,6 +364,7 @@ function craatePageExitFrezi() {
 
     main.append(NamePage);
     main.append(PodskazkaViboraSchem());
+
 
     if(ObshParam.typeVrezkiFrez==="p1") {
         main.append(funcp1());
@@ -332,13 +381,12 @@ function craatePageExitFrezi() {
     }else if (ObshParam.typeVrezkiFrez==="o7") {
         main.append(funco7());
     }
-}
 
-function funcp1() {
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+    function funcp1() {
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
         <article id="p1e" class="exitfrez">
             <div class="textInArticle text ">
                 Выход по прямой. Диаметр фрезы больше ширины обрабатываемой поверхности
@@ -358,15 +406,15 @@ function funcp1() {
             <img class="imgToolPenetration" src="img/schemes/schem8-3exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funcp2() {
+    function funcp2() {
 
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
         <article id="p2e" class="exitfrez">
             <div class="textInArticle text">
                 Выход по прямой на проход
@@ -380,14 +428,14 @@ function funcp2() {
             <img class="imgToolPenetration" src="img/schemes/schem8-2exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funcp3() {
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+    function funcp3() {
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
         <article id="p3e" class="exitfrez">
             <div class="textInArticle text">
                 Выход по прямой на проход
@@ -419,14 +467,14 @@ function funcp3() {
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funcp4() {
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+    function funcp4() {
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
         <article id="p3e" class="exitfrez">
             <div class="textInArticle text">
                 Выход по прямой на проход
@@ -458,15 +506,15 @@ function funcp4() {
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funco5() {
+    function funco5() {
 
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
          <article id="p1e" class="exitfrez">
             <div class="textInArticle text ">
                  Выход по прямой. Диаметр фрезы больше ширины обрабатываемой поверхности
@@ -486,15 +534,15 @@ function funco5() {
             <img class="imgToolPenetration" src="img/schemes/schem8-3exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funco6() {
+    function funco6() {
 
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
          <article id="p3e" class="exitfrez">
             <div class="textInArticle text">
                 Выход по прямой на проход
@@ -526,15 +574,15 @@ function funco6() {
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
-}
+        return addNewBlock
+    }
 
-function funco7() {
+    function funco7() {
 
-    let addNewBlock = document.createElement('div');
-    addNewBlock.className = `contentHomePage`;
-    addNewBlock.id = ``;
-    addNewBlock.innerHTML = `
+        let addNewBlock = document.createElement('div');
+        addNewBlock.className = `contentHomePage`;
+        addNewBlock.id = ``;
+        addNewBlock.innerHTML = `
          <article id="p3e" class="exitfrez">
             <div class="textInArticle text">
                 Выход по прямой на проход
@@ -566,8 +614,20 @@ function funco7() {
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
-    return addNewBlock
+        return addNewBlock
+    }
+
+    addStatusActive()
+
+    function addStatusActive() {
+        let SearchId = ObshParam.typeVuxodFrez
+        if (SearchId != null) {
+            let imgActiv = document.getElementById(SearchId)
+            imgActiv.classList.toggle('activeImg')
+        }
+    }
 }
+
 
 // <article id="p1e" className="exitfrez">
 //     <div className="textInArticle text ">
