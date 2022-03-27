@@ -322,15 +322,15 @@ function craatePageExitFrezi() {
     }else if (ObshParam.typeVrezkiFrez==="p2") {
         main.append(funcp2());
     } else if (ObshParam.typeVrezkiFrez==="p3") {
-
+        main.append(funcp3());
     }else if (ObshParam.typeVrezkiFrez==="p4") {
-
+        main.append(funcp4());
     }else if (ObshParam.typeVrezkiFrez==="o5") {
         main.append(funco5());
     }else if (ObshParam.typeVrezkiFrez==="o6") {
-
+        main.append(funco6());
     }else if (ObshParam.typeVrezkiFrez==="o7") {
-
+        main.append(funco7());
     }
 }
 
@@ -341,21 +341,21 @@ function funcp1() {
     addNewBlock.innerHTML = `
         <article id="p1e" class="exitfrez">
             <div class="textInArticle text ">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по прямой. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="o5e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по окружности. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="8e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Инструмент не проходит материал на проход
             </div>
-            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem8-3exit.png" alt="imgToolPenetration"/>
         </article>
             `;
     return addNewBlock
@@ -369,77 +369,98 @@ function funcp2() {
     addNewBlock.innerHTML = `
         <article id="p2e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по прямой на проход
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem2exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="8e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Инструмент не проходит материал на проход
             </div>
-            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+            <img class="imgToolPenetration" src="img/schemes/schem8-2exit.png" alt="imgToolPenetration"/>
         </article>
             `;
     return addNewBlock
 }
 
 function funcp3() {
-
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `contentHomePage`;
     addNewBlock.id = ``;
     addNewBlock.innerHTML = `
-        <article id="p1e" class="exitfrez">
-            <div class="textInArticle text ">
-                Выход инструмента из металла происходит по волшебству!
-            </div>
-            <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
-        </article>
-        <article id="p2e" class="exitfrez">
-            <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
-            </div>
-            <img class="imgToolPenetration" src="img/schemes/schem2exit.png" alt="imgToolPenetration"/>
-        </article>
         <article id="p3e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по прямой на проход
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="p4e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по прямой. Обработка паза с выходом из поверхность под углом
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
         </article>
-        <article id="o5e" class="exitfrez">
-            <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
-            </div>
-            <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
-        </article>
         <article id="o6e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по окружности на проход по центру скругления заготовки
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="o7e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Выход по окружности на проход со мещением от центру скругления заготовки
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="8e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Инструмент не проходит материал на проход
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
     return addNewBlock
 }
+
+function funcp4() {
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+        <article id="p3e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="p4e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой. Обработка паза с выходом из поверхность под углом
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o6e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход по центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o7e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход со мещением от центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Инструмент не проходит материал на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
+
 function funco5() {
 
     let addNewBlock = document.createElement('div');
@@ -448,25 +469,155 @@ function funco5() {
     addNewBlock.innerHTML = `
          <article id="p1e" class="exitfrez">
             <div class="textInArticle text ">
-                Выход инструмента из металла происходит по волшебству!
+                 Выход по прямой. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="o5e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                 Выход по окружности. Диаметр фрезы больше ширины обрабатываемой поверхности
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
         </article>
         <article id="8e" class="exitfrez">
             <div class="textInArticle text">
-                Выход инструмента из металла происходит по волшебству!
+                Инструмент не проходит материал на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8-3exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
+
+function funco6() {
+
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+         <article id="p3e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="p4e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой. Обработка паза с выходом из поверхность под углом
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o6e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход по центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o7e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход со мещением от центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Инструмент не проходит материал на проход
             </div>
             <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
         </article>
             `;
     return addNewBlock
 }
+
+function funco7() {
+
+    let addNewBlock = document.createElement('div');
+    addNewBlock.className = `contentHomePage`;
+    addNewBlock.id = ``;
+    addNewBlock.innerHTML = `
+         <article id="p3e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="p4e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по прямой. Обработка паза с выходом из поверхность под углом
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o6e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход по центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="o7e" class="exitfrez">
+            <div class="textInArticle text">
+                Выход по окружности на проход со мещением от центру скругления заготовки
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
+        </article>
+        <article id="8e" class="exitfrez">
+            <div class="textInArticle text">
+                Инструмент не проходит материал на проход
+            </div>
+            <img class="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+        </article>
+            `;
+    return addNewBlock
+}
+
+// <article id="p1e" className="exitfrez">
+//     <div className="textInArticle text ">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem1exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="p2e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem2exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="p3e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem3exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="p4e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem4exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="o5e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem5exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="o6e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem6exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="o7e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem7exit.png" alt="imgToolPenetration"/>
+// </article>
+// <article id="8e" className="exitfrez">
+//     <div className="textInArticle text">
+//         Выход инструмента из металла происходит по волшебству!
+//     </div>
+//     <img className="imgToolPenetration" src="img/schemes/schem8exit.png" alt="imgToolPenetration"/>
+// </article>
+
 function createPageResult() {
     let addNewBlock = document.createElement('div');
     addNewBlock.className = `PageResult`;
